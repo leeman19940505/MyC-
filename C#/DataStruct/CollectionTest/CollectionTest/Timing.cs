@@ -17,11 +17,13 @@ namespace CollectionTest
             duration = new TimeSpan(0);
         }
 
+        //停止
         public void StopTime()
         {
             duration = Process.GetCurrentProcess().Threads[0].UserProcessorTime.Subtract(startingTime);
         }
 
+        //开始
         public void startTime()
         {
             GC.Collect();
