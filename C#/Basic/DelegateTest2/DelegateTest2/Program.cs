@@ -39,6 +39,12 @@ namespace DelegateTest2
     {
         static void Main(string[] args)
         {
+            DelegateTest(); //委托构成
+            DelegateTest1(); //合并和删除委托
+        }
+
+        private static void DelegateTest()
+        {
             Person jon = new Person("Jon");
             Person tom = new Person("Tom");
             StringProcessor jonsVoice, tomsVoice, background;
@@ -46,8 +52,14 @@ namespace DelegateTest2
             tomsVoice = new StringProcessor(tom.Say);
             background = new StringProcessor(Background.Note);
             jonsVoice("Hello, son."); //调用委托实例
-            tomsVoice.Invoke("Hello, Daddy");
+            tomsVoice.Invoke("Hello, Daddy"); //Invoke同步调用
+            //异步调用使用BeginInvoke和EndInvoke
             background("An airplane flies past");
+        }
+
+        private static void DelegateTest1()
+        {
+
         }
     }
 }
