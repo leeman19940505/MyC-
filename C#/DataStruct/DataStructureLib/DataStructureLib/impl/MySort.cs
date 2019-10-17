@@ -27,6 +27,11 @@ namespace DataStructureLib.impl
         //    }
         //}
 
+        /// <summary>
+        /// 插入排序
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="a"></param>
         public void InsertionSort<T>(T[] a) where T : IComparable
         {
             int len = a.Length;
@@ -42,6 +47,48 @@ namespace DataStructureLib.impl
                     j--;
                 }
                 a[j] = val;
+            }
+        }
+
+        /// <summary>
+        /// 希尔排序 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="a"></param>
+        public void ShellSort<T>(T[] a) where T : IComparable
+        {
+            
+        }
+
+        /// <summary>
+        /// 待测试
+        /// </summary>
+        /// <param name="a"></param>
+        public void ShellSort(int[] a)
+        {
+            int len = a.Length;
+            int j; //当前下标
+            int temp; //当前值
+            int increment = (len / 2); //增量
+
+            while (increment > 0) //每次分组间隔减半
+            {
+                for (int i = increment; i < len; i++)
+                {
+                    j = increment;
+                    temp = a[j];
+                    //执行插入排序
+                    while(j >= increment && a[j - increment] > temp)
+                    {
+                        //前面的数较大时 当前位置等于前面的数（较大的数）
+                        a[j] = a[j - increment];
+                        //当前位置移动到前面的数（较大的数的位置）
+                        j -= increment; 
+                    }
+                    a[j] = temp; //给当前位置赋值 
+                }
+
+                increment /= 2;
             }
         }
     }
