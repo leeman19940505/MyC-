@@ -4,39 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommandPattern
+namespace InputStateCommandTest
 {
     class ConcreateCommand : ICommand
     {
-        Reciever iRecoever;
+        Reciever iReciever;
         Message iMessage;
         Action iAction;
-        public ConcreateCommand(Action aAction, Message aMesage)
+
+        public ConcreateCommand(Action aAction, Message aMessage)
         {
-            iRecoever = new Reciever();
+            iReciever = new Reciever();
             iAction = aAction;
-            iMessage = aMesage;
+            iMessage = aMessage;
         }
 
         public void Excute()
         {
-            iRecoever.Operation(iAction, iMessage);
+            iReciever.Operation(iAction, iMessage);
         }
 
         public void UnExcute()
         {
-            iAction = GetUnDo(); //获取取消操作
-            iRecoever.Operation(iAction, iMessage);
+            iAction = GetUnDo(); //获取相反操作
+            iReciever.Operation(iAction, iMessage);
         }
 
         private Action GetUnDo()
         {
             switch(iAction)
             {
-                case Action.Delete:
-                    return Action.Insert;
-                case Action.Insert:
-                    return Action.Delete;
+                case Action.Foreward:
+                    return Action.Backward;
+                case Action.Backward:
+                    return Action.Foreward;
                 default:
                     return 0;
             }

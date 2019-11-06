@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DEAB1D75-C859-4D85-A682-E1498B449D34}</ProjectGuid>
+    <ProjectGuid>{9AEEBA4E-D0B0-4BAF-BDFF-DDD3D8ABF8EB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CommandPattern</RootNamespace>
-    <AssemblyName>CommandPattern</AssemblyName>
+    <RootNamespace>RemoteControlCommandTest1</RootNamespace>
+    <AssemblyName>RemoteControlCommandTest1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,20 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Action.cs" />
-    <Compile Include="ConcreateCommand.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="Invoker.cs" />
-    <Compile Include="Message.cs" />
+    <Compile Include="Entity\Light.cs" />
+    <Compile Include="Entity\Stereo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reciever.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="description\CommandPattern.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DEAB1D75-C859-4D85-A682-E1498B449D34}</ProjectGuid>
+    <ProjectGuid>{B88DC443-7A14-4FEA-924B-FEF8A923A776}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CommandPattern</RootNamespace>
-    <AssemblyName>CommandPattern</AssemblyName>
+    <RootNamespace>InputStateCommandTest</RootNamespace>
+    <AssemblyName>InputStateCommandTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +48,12 @@
     <Compile Include="Action.cs" />
     <Compile Include="ConcreateCommand.cs" />
     <Compile Include="ICommand.cs" />
+    <Compile Include="InputStateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputStateForm.Designer.cs">
+      <DependentUpon>InputStateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoker.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Program.cs" />
@@ -56,7 +64,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="description\CommandPattern.png" />
+    <EmbeddedResource Include="InputStateForm.resx">
+      <DependentUpon>InputStateForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
