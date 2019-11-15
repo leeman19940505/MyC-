@@ -9,14 +9,14 @@ namespace FanSpeedCommandTest
     /// <summary>
     /// 高速运行
     /// </summary>
-    class CeilingFanHightCommand : ICommand
+    class CeilingFanHightCommand : Command
     {
         CeilingFan ceilingFan;
         int preSpeed;
 
-        public CeilingFanHightCommand(CeilingFan cf)
+        public CeilingFanHightCommand(CeilingFan ceilingFan)
         {
-            ceilingFan = cf;
+            this.ceilingFan = ceilingFan;
         }
 
         public void execute()
@@ -31,6 +31,9 @@ namespace FanSpeedCommandTest
             {
                 case CeilingFan.HIGH:
                     ceilingFan.High();
+                    break;
+                case CeilingFan.MEDIUM:
+                    ceilingFan.Medium();
                     break;
                 case CeilingFan.LOW:
                     ceilingFan.Low();

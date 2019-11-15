@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FanSpeedCommandTest
 {
-    class CeilingFanLowCommand : ICommand
+    class CeilingFanLowCommand : Command
     {
         public void execute()
         {

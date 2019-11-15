@@ -43,13 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\RemoteControl.cs" />
     <Compile Include="Entity\Light.cs" />
     <Compile Include="Entity\Stereo.cs" />
+    <Compile Include="Entity\TV.cs" />
+    <Compile Include="Implements\LightOffCommand.cs" />
+    <Compile Include="Implements\LightOnCommand.cs" />
+    <Compile Include="Implements\NoCommand.cs" />
+    <Compile Include="Implements\StereoOffCommand.cs" />
+    <Compile Include="Implements\StereoOnWithCDCommand.cs" />
+    <Compile Include="Implements\TVOffCommand.cs" />
+    <Compile Include="Implements\TVOnCommand.cs" />
+    <Compile Include="Interface\Command.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

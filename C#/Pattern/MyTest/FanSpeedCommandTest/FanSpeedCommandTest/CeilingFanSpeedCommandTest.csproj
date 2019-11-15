@@ -46,7 +46,7 @@
     <Compile Include="CeilingFan.cs" />
     <Compile Include="CeilingFanHightCommand.cs" />
     <Compile Include="CeilingFanLowCommand.cs" />
-    <Compile Include="ICommand.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

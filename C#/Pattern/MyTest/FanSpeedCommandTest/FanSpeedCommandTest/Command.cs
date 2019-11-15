@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FanSpeedCommandTest
 {
-    interface ICommand
+    interface Command
     {
         void execute();
         void undo();

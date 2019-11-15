@@ -18,27 +18,32 @@ namespace RemoteControlCommandTest1.Entity
 
         public void On()
         {
-            Console.WriteLine(location + "stereo on");
+            Console.WriteLine(location + " stereo on");
         }
 
         public void Off()
         {
-            Console.WriteLine(location + "stereo off");
+            Console.WriteLine(location + " stereo off");
         }
 
         public void setDVD()
         {
-            Console.WriteLine(location + "stereo DVD mode");
+            Console.WriteLine(location + " stereo DVD mode");
         }
 
         public void setCD()
         {
-            Console.WriteLine(location + "stereo CD");
+            Console.WriteLine(location + " stereo CD");
         }
 
         public void setRadio()
         {
-            Console.WriteLine(location + "stereo Radio mode");
+            Console.WriteLine(location + " stereo Radio mode");
+        }
+
+        public void setVolume(int volume)
+        {
+            Console.WriteLine(location + " stereo volume to" + volume);
         }
     }
 }
