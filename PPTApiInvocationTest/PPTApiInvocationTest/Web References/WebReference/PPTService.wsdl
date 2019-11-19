@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="localhost" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="localhost" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="localhost">
+      <s:element name="CreatePPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePPTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PPTHasGenerated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fullFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PPTHasGeneratedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PPTHasGeneratedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageByBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="base64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="folderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageByBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageByBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePDFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLeJiaPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLeJiaPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateLeJiaPDFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateKingPPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TempletName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Index" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateKingPPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateKingPPTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateCustomerPPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TempletName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateCustomerPPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateCustomerPPTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLeJiaPPT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLeJiaPPTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateLeJiaPPTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XLSConvertToPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonContent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="XLSConvertToPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XLSConvertToPDFResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreatePPTSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePPT" />
+  </wsdl:message>
+  <wsdl:message name="CreatePPTSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="PPTHasGeneratedSoapIn">
+    <wsdl:part name="parameters" element="tns:PPTHasGenerated" />
+  </wsdl:message>
+  <wsdl:message name="PPTHasGeneratedSoapOut">
+    <wsdl:part name="parameters" element="tns:PPTHasGeneratedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageByBase64SoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageByBase64" />
+  </wsdl:message>
+  <wsdl:message name="GetImageByBase64SoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageByBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="CreatePDFSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePDF" />
+  </wsdl:message>
+  <wsdl:message name="CreatePDFSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateLeJiaPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLeJiaPDF" />
+  </wsdl:message>
+  <wsdl:message name="CreateLeJiaPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLeJiaPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateKingPPTSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateKingPPT" />
+  </wsdl:message>
+  <wsdl:message name="CreateKingPPTSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateKingPPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerPPTSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateCustomerPPT" />
+  </wsdl:message>
+  <wsdl:message name="CreateCustomerPPTSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateCustomerPPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateLeJiaPPTSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLeJiaPPT" />
+  </wsdl:message>
+  <wsdl:message name="CreateLeJiaPPTSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLeJiaPPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="XLSConvertToPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:XLSConvertToPDF" />
+  </wsdl:message>
+  <wsdl:message name="XLSConvertToPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:XLSConvertToPDFResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PPTServiceSoap">
+    <wsdl:operation name="CreatePPT">
+      <wsdl:input message="tns:CreatePPTSoapIn" />
+      <wsdl:output message="tns:CreatePPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PPTHasGenerated">
+      <wsdl:input message="tns:PPTHasGeneratedSoapIn" />
+      <wsdl:output message="tns:PPTHasGeneratedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageByBase64">
+      <wsdl:input message="tns:GetImageByBase64SoapIn" />
+      <wsdl:output message="tns:GetImageByBase64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePDF">
+      <wsdl:input message="tns:CreatePDFSoapIn" />
+      <wsdl:output message="tns:CreatePDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeJiaPDF">
+      <wsdl:input message="tns:CreateLeJiaPDFSoapIn" />
+      <wsdl:output message="tns:CreateLeJiaPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateKingPPT">
+      <wsdl:input message="tns:CreateKingPPTSoapIn" />
+      <wsdl:output message="tns:CreateKingPPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerPPT">
+      <wsdl:input message="tns:CreateCustomerPPTSoapIn" />
+      <wsdl:output message="tns:CreateCustomerPPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeJiaPPT">
+      <wsdl:input message="tns:CreateLeJiaPPTSoapIn" />
+      <wsdl:output message="tns:CreateLeJiaPPTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="XLSConvertToPDF">
+      <wsdl:input message="tns:XLSConvertToPDFSoapIn" />
+      <wsdl:output message="tns:XLSConvertToPDFSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PPTServiceSoap" type="tns:PPTServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePPT">
+      <soap:operation soapAction="localhost/CreatePPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PPTHasGenerated">
+      <soap:operation soapAction="localhost/PPTHasGenerated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageByBase64">
+      <soap:operation soapAction="localhost/GetImageByBase64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePDF">
+      <soap:operation soapAction="localhost/CreatePDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeJiaPDF">
+      <soap:operation soapAction="localhost/CreateLeJiaPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateKingPPT">
+      <soap:operation soapAction="localhost/CreateKingPPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerPPT">
+      <soap:operation soapAction="localhost/CreateCustomerPPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeJiaPPT">
+      <soap:operation soapAction="localhost/CreateLeJiaPPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XLSConvertToPDF">
+      <soap:operation soapAction="localhost/XLSConvertToPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PPTServiceSoap12" type="tns:PPTServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePPT">
+      <soap12:operation soapAction="localhost/CreatePPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PPTHasGenerated">
+      <soap12:operation soapAction="localhost/PPTHasGenerated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageByBase64">
+      <soap12:operation soapAction="localhost/GetImageByBase64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePDF">
+      <soap12:operation soapAction="localhost/CreatePDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeJiaPDF">
+      <soap12:operation soapAction="localhost/CreateLeJiaPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateKingPPT">
+      <soap12:operation soapAction="localhost/CreateKingPPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerPPT">
+      <soap12:operation soapAction="localhost/CreateCustomerPPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLeJiaPPT">
+      <soap12:operation soapAction="localhost/CreateLeJiaPPT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XLSConvertToPDF">
+      <soap12:operation soapAction="localhost/XLSConvertToPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PPTService">
+    <wsdl:port name="PPTServiceSoap" binding="tns:PPTServiceSoap">
+      <soap:address location="http://192.168.1.154:50210/PPTService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PPTServiceSoap12" binding="tns:PPTServiceSoap12">
+      <soap12:address location="http://192.168.1.154:50210/PPTService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
