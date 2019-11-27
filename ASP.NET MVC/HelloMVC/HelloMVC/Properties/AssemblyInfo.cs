@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列特性集
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("MVCHello")]
+[assembly: AssemblyTitle("HelloMVC")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MVCHello")]
+[assembly: AssemblyProduct("HelloMVC")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-[assembly: Guid("7a2e7ec1-b84b-41d3-b68b-8ebe2a02ab3c")]
+[assembly: Guid("82f632c1-199b-4add-9629-a9a0ef502213")]
 
 // 程序集的版本信息由下列四个值组成:
 //

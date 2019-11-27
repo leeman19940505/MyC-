@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E6636597-BCDB-48C2-B33C-8896BB1239F0}</ProjectGuid>
+    <ProjectGuid>{5071BCDE-89D6-4AC4-A93D-75193EBABC75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCHello.Tests</RootNamespace>
-    <AssemblyName>MVCHello.Tests</AssemblyName>
+    <RootNamespace>HelloMVC.Tests</RootNamespace>
+    <AssemblyName>HelloMVC.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -56,16 +56,16 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="AdminControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MVCHello\MVCHello.csproj">
-      <Project>{7A2E7EC1-B84B-41D3-B68B-8EBE2A02AB3C}</Project>
-      <Name>MVCHello</Name>
+    <ProjectReference Include="..\HelloMVC\HelloMVC.csproj">
+      <Project>{82F632C1-199B-4ADD-9629-A9A0EF502213}</Project>
+      <Name>HelloMVC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
