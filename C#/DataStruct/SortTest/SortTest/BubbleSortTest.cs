@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SortTest
 {
+    /// <summary>
+    /// 冒泡排序
+    /// </summary>
     class BubbleSortTest
     {
         CArray nums = null;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SortTest
 {
+    /// <summary>
+    /// 插入排序
+    /// </summary>
     class InsertionSortTest
     {
         CArray nums = null;
@@ -29,8 +32,11 @@ namespace SortTest
                 inner = outer;
                 while(inner > 0 && nums.Arr[inner - 1] >= temp)
                 {
-                    nums.Arr[inner] = 
+                    nums.Arr[inner] = nums.Arr[inner - 1];
+                    inner -= 1;
                 }
+                nums.Arr[inner] = temp;
+                nums.DisplayElements();
             }
         }
     }

@@ -8,25 +8,58 @@
 
 <html>
 <head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css" />
     <title>RsvpForm</title>
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
-        <p>Your name: @Html.TextBoxFor(x => x.Name) </p>
-        <p>Your email: @Html.TextBoxFor(x => x.Email) </p>
-        <p>Your phone: @Html.TextBoxFor(x => x.Phone) </p>
-        <p>
-            Will you attend?
-            @Html.DropDownListFor(x => x.WillAttend, new[]
-       {
-           new SelectListItem(){Text = "Yes, I'll be there", Value = bool.TrueString},
-           new SelectListItem(){Text = "No, I can't come", Value = bool.FalseString}
-       })
-        </p>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>RSVP</h4></div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                //验证摘要 辅助器
+                //如果没有错误 Html.ValidationSummary会在表单中以占位符的方式创建一个隐藏的列表项，否则MVC会使这个占位符成为可见
+                //并添加由验证注解属性所定义的错误信息
+                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label>Your name:</label> 
+                    @Html.TextBoxFor(x => x.Name)                
+                </div>
+                <div class="form-group">
+                    <label>Your email:</label>
+                    @Html.TextBoxFor(x => x.Email)
+                </div>
+                <div class="form-group">
+                    <label>Your phone:</label> 
+                    @Html.TextBoxFor(x => x.Phone)
+                </div>
+                
+                <div class="form-group">
+                    <label>Will you attend?</label>
+                    @Html.DropDownListFor(x => x.WillAttend, new[]
+                    {
+                       new SelectListItem(){
+                           Text = "Yes, I'll be there", Value = bool.TrueString
+                       },
+                       new SelectListItem(){
+                           Text = "No, I can't come", Value = bool.FalseString
+                       }
+                    }, "Choose an option", new { @class = "formcontrol"} )
 
-        <input type="submit" value="Submit RSVP" />
-    }
+                    @*使用匿名类型将TextBoxFor辅助器生成的元素上将class属性设置为formcontrol
+                    @Html.TextBoxFor(x => x.Name, new { @class = "formcontrol" })*@
+
+                    @*使用前缀@ 由于该对象定义的属性用于对HTML元素添加标签属性 class是C#保留字*@
+                </div>
+                
+                <div class="text-center">
+                    <input class="btn btn-success" type="submit" value="Submit RSVP" />
+                </div>
+            }
+        </div>
+    </div>
 </body>
 </html>

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SortTest
 {
+    /// <summary>
+    /// 选择排序
+    /// </summary>
     class SelectionSortTest
     {
         CArray nums = null;
